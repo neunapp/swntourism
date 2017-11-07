@@ -1,2 +1,0 @@
-# swntourism
-web de turismo

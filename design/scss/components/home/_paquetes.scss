@@ -1,0 +1,61 @@
+.paquetes {
+  background: color(fondo1);
+  padding: 1em;
+  &__copy {
+    text-align: center;
+    &__title {
+      font-family: $font-title-secundario;
+      font-size: 1.5em;
+    }
+    &__text {
+      font-family: $font-text;
+    }
+  }
+}
+
+.paquetes__item {
+  background: color(blanco);
+  margin-bottom: 0.5em;
+  &__img {
+    margin: 0px;
+    width: 100%;
+    height: 130px;
+  }
+  &__content {
+    padding: {
+      left: 0.3em;
+      right: 0.3em;
+      top: 0.3em;
+      bottom: 0.5em;
+    };
+    text-align: center;
+    &__title {
+      font-family: $font-title;
+      font-weight: bold;
+      color: color(segundo);
+      font-size: 0.9em;
+      height: 40px;
+    }
+    &__text {
+      font-family: $font-subtitule;
+      color: color(negro-suave);
+      font-size: 0.7em;
+    }
+    &__btn {
+      font-family: $font-text;
+      color: color(segundo);
+      border: 1px solid;
+      font-size: 0.7em;
+      font-weight: bold;
+      padding: {
+        left: 1.5em;
+        right: 1.5em;
+        top: 0.3em;
+        bottom: 0.3em;
+      };
+      &:hover {
+        color: color(quinto);
+      }
+    }
+  }
+}

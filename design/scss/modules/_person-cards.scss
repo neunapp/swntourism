@@ -1,0 +1,64 @@
+.person-cards {
+  background: color(blanco);
+  padding: 1em;
+  &__copy {
+    text-align: center;
+    font-family: $font-text;
+    color: color(negro-suave);
+    &__title {
+      font-weight: bold;
+    }
+    &__text {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.person-cards__card {
+  background: color(fondo1);
+  margin-bottom: $person-cards-space;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+  &__img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+  }
+  &__content {
+    text-align: center;
+    &__title {
+      font-size: $font-siz-text;
+      font-family: $font-subtitule;
+      color: color(negro-suave);
+      height: 40px;
+    }
+    &__etiqueta {
+      font-family: $font-subtitule;
+      font-size: $font-siz-text-mov;
+      color: color(primero);
+      margin-bottom: 0.5em;
+    }
+    &__text {
+      font-family: $font-text;
+      font-size: $font-siz-text-mov;
+      margin-top: 0em;
+    }
+    &__btn {
+      font-family: $font-text;
+      font-size: $font-siz-text-mov;
+      color: color(primero);
+      border: 1px solid;
+      padding: {
+        top: 0.3em;
+        bottom: 0.3em;
+        left: 1em;
+        right: 1em;
+      };
+      border-radius: 20px;
+    }
+  }
+}

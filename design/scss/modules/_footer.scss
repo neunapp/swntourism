@@ -1,0 +1,22 @@
+.footer {
+  background: color(segundo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  &__phone {
+    color: color(blanco);
+    margin: 0.5em;
+    &:hover {
+      color: color(primero);
+    }
+  }
+  &__icon {
+    margin: 0.3em;
+    color: color(blanco);
+    font-size: 1.5em;
+    &:hover {
+      color: color(primero);
+    }
+  }
+}

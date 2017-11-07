@@ -1,0 +1,42 @@
+.home-contact {
+  background-image: img('21.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2em;
+  text-align: center;
+  font-family: $font-title-secundario;
+  color: color(segundo);
+  //for tablet
+  @include desde_hasta(600px, 1000px){
+    padding: {
+      left: 5em;
+      right: 5em;
+    }
+  };
+  &__title {
+    font-size: 1.5em;
+  }
+  &__form {
+    opacity: 0.3;
+    &__input {
+      color: color(negro-suave);
+      &::-webkit-input-placeholder {
+        color: color(negro);
+      }
+    }
+    &__btn {
+      background: color(negro);
+      padding: {
+        top: 0.5em;
+        bottom: 0.5em;
+        left: 1.5em;
+        right: 1.5em;
+      };
+      color: color(blanco);
+      cursor: pointer;
+      &:hover {
+        background: color(negro-suave);
+      }
+    }
+  }
+}

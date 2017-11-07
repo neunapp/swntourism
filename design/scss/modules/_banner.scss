@@ -1,0 +1,45 @@
+.banner {
+  text-align: center;
+  font-family: $font-title;
+  position: relative;
+  height: 230px;
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+  //for tablet
+  @include desde_hasta(600px, 1024px){
+    height: 300px;
+  };
+}
+
+.banner__copy {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__content {
+    text-align: center;
+    padding: 1em;
+    color: color(blanco);
+    &__h1 {
+      font-family: $font-title-secundario;
+      font-weight: bold;
+      //for tablet
+      @include desde_hasta(600px, 1024px){
+        font-size: 1.8em;
+      };
+    }
+    &__h2 {
+      font-family: $font-text;
+      //for tablet
+      @include desde_hasta(600px, 1024px){
+        font-size: 1.5em;
+      };
+    }
+  }
+}
