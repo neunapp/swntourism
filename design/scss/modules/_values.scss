@@ -1,3 +1,38 @@
 .values {
   display: none;
+  //for tablet
+  @include desde(640px){
+    display:flex;
+    padding: 2em;
+  };
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &__title {
+    font-family: $font-subtitle;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  &__text {
+    font-family: $font-text;
+    text-align: center;
+    color: color(negro-suave);
+  }
+}
+
+.color_primero {
+  color: color(primero);
+}
+
+.color_segundo {
+  color: color(segundo);
+}
+
+.color_tercero {
+  color: color(cuarto);
 }

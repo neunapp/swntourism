@@ -113,3 +113,7 @@ ngorgeous/static/img/*
 
 
 ngorgeous/applications/home/migrations/*
+ngorgeous/applications/destinos/migrations/*
+ngorgeous/applications/experiencias/migrations/*
+ngorgeous/applications/miscelanea/migrations/*
+ngorgeous/applications/paquetes/migrations/*

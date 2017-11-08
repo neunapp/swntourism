@@ -26,14 +26,20 @@
     color: color(negro-suave);
     height: 80px;
     &__icon {
-      font-size:2.5em;
+      font-size: 2.5em;
       margin-top: -1em;
       margin-right: 0.2em;
       color: #E0E0E0;
+      @include desde(1024px){
+        font-size: 3em;
+      };
     }
     &__text {
       text-align: justify;
       font-size: $font-siz-text-mov;
+      @include desde(1024px){
+        font-size: $font-siz-text;
+      };
     }
   }
 }

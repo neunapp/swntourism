@@ -6,6 +6,11 @@
   padding: 1em;
   background: color(segundo);
   z-index: 300;
+  //for pc
+  @include desde(1000px){
+    display: none;
+  };
+  //
   &__menu_icon {
     color: color(blanco);
     font-size: $font-siz-ctrl;
@@ -27,6 +32,7 @@
 .mov-header-menu-enabled {
   display: none;
 }
+
 .mov-header-menu {
   z-index: 300;
   background-color:rgba(0,0,0,.25);
@@ -55,7 +61,7 @@
         }
         color: #eeeeee;
         font-size: $font-siz-items;
-        font-family: $font-subtitule;
+        font-family: $font-subtitle;
         &:hover{
           color: color(blanco);
         }
@@ -88,5 +94,59 @@
 }
 
 .header-space {
-  height: 4em;
+  height: 4.2em;
+  @include desde(1000px){
+    height: 5em;
+  };
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  z-index: 400;
+  width: 100%;
+  background: color(blanco);
+  padding: 1em;
+  //for table and mov
+  @include hasta(1000px){
+    display: none;
+  };
+  &__logo {
+    width: 80px;
+    height: 55px;
+  }
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0px;
+    &__li {
+      text-align: center;
+      padding: {
+        top: 0.4em;
+        bottom: 0.4em;
+        left: 1em;
+        right: 1em;
+      };
+      color: color(blanco);
+      &:hover{
+        background: color(segundo);
+      }
+      &__a {
+        font-family: $font-title;
+        font-size: $font-siz-items;
+        font-weight: bold;
+        color: color(segundo);
+        &:hover{
+          color: color(blanco);
+        }
+      }
+    }
+  }
+}
+
+.li_action {
+  color: color(primero);
 }

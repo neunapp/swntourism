@@ -7,11 +7,20 @@
   font-family: $font-title-secundario;
   color: color(segundo);
   //for tablet
-  @include desde_hasta(600px, 1000px){
+  @include desde_hasta(600px, 1024px){
     padding: {
       left: 5em;
       right: 5em;
     }
+  };
+  //for pc
+  @include desde(1024px){
+    padding: {
+      left: 20%;
+      right: 20%;
+      top: 10%;
+      bottom: 10%;
+    };
   };
   &__title {
     font-size: 1.5em;
@@ -24,19 +33,25 @@
         color: color(negro);
       }
     }
-    &__btn {
-      background: color(negro);
-      padding: {
-        top: 0.5em;
-        bottom: 0.5em;
-        left: 1.5em;
-        right: 1.5em;
-      };
-      color: color(blanco);
-      cursor: pointer;
-      &:hover {
-        background: color(negro-suave);
-      }
-    }
+  }
+}
+
+.home-contact__form__btn {
+  padding: {
+    top: 0.5em;
+    bottom: 0.5em;
+    left: 1.5em;
+    right: 1.5em;
+  };
+  background: color(primero);
+  border: 0px;
+  color: color(blanco);
+  cursor: pointer;
+  &:hover {
+    background: color(negro-suave);
+  }
+  //for pc
+  @include desde(1024px){
+    background: color(primero);
   }
 }

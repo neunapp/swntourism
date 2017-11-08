@@ -37,37 +37,63 @@
             <a href="#" class="mov-header-menu__ul__li__a">Contacto</a>
           </li>
       </div>
+      <!-- header for viewport pc -->
+      <div class="main-header">
+        <a href="#">
+          <img src="/img/logo_g3.png" alt="machu picchu" class="main-header__logo">
+        </a>
+        <ul class="main-header__menu">
+          <li class="main-header__menu__li">
+            <a href="#" class="main-header__menu__li__a">Experiencias</a>
+          </li>
+          <li class="main-header__menu__li">
+            <a href="#" class="main-header__menu__li__a">Galeria de Fotos</a>
+          </li>
+          <li class="main-header__menu__li">
+            <a href="#" class="main-header__menu__li__a">Promociones</a>
+          </li>
+          <li class="main-header__menu__li">
+            <a href="#" class="main-header__menu__li__a">Destinos</a>
+          </li>
+          <li class="main-header__menu__li">
+            <a href="#" class="main-header__menu__li__a li_action">Paquetes Turisticos</a>
+          </li>
+        </ul>
+      </div>
+      <!-- end viewport pc-->
     </header>
     <div class="header-space">
 
     </div>
     <div class="banner">
-      <img src="/img/fondo3.jpg" alt="machupicchu" class="banner__img">
+      <img src="/img/fondo4.jpg" alt="machupicchu" class="banner__img">
       <div class="banner__copy">
         <div class="banner__copy__content">
           <h1 class="banner__copy__content__h1">Guia completa por Machu Picchu y todo el Perú.</h1>
           <h2 class="banner__copy__content__h2">Visita todas las maravillas del Perú</h2>
         </div>
         <div class="banner__copy__ctrls">
+          <a href="#" class="banner__copy__ctrls__btn btn_primero">Ver Paquetes</a>
+          <a href="#" class="banner__copy__ctrls__btn btn_segundo">Promociones</a>
         </div>
       </div>
     </div>
 
     <div class="values grid-x grid-margin-x">
-      <div class="cell medium-4">
-        <i class="fa fa-bus" aria-hidden="true"></i>
-        <p>Trasporte Excelente</p>
-        <p>No se preocupe de la calidad del trasporte, brindamos comodas alternativas y personal de calidad</p>
+      <div class="cell medium-4 value">
+        <i class="fa fa-bus fa-3x value__icon color_primero" aria-hidden="true"></i>
+        <p class="value__title">Trasporte Excelente</p>
+        <p class="value__text">No se preocupe de la calidad del trasporte, brindamos comodas alternativas y personal de calidad</p>
       </div>
-      <div class="cell medium-4">
-        <i class="fa fa-lock" aria-hidden="true"></i>
-        <p>Viaje Seguro</p>
-        <p>No se preocupe de la calidad del trasporte, brindamos comodas alternativas y personal de calidad</p>
+      <div class="cell medium-4 value">
+        <i class="fa fa-lock fa-3x value__icon color_segundo" aria-hidden="true"></i>
+        <p class="value__title">Viaje Seguro</p>
+        <p class="value__text">No se preocupe de la calidad del trasporte, brindamos comodas alternativas y personal de calidad</p>
       </div>
-      <div class="cell medium-4">
-        <i class="fa fa-heart" aria-hidden="true"></i>
-        <p>Experiencia inolvidable</p>
-        <p>No se preocupe de la calidad del trasporte, brindamos comodas alternativas y personal de calidad</p>
+      <div class="cell medium-4 value">
+        <i class="fa fa-heart fa-3x value__icon color_tercero" aria-hidden="true"></i>
+        <p class="value__title">Experiencia inolvidable</p>
+        <p class="value__text">No se preocupe de la calidad del trasporte, brindamos comodas alternativas y personal de calidad</p>
       </div>
     </div>
 
@@ -215,10 +241,12 @@
     </div>
     <div class="home-contact">
       <p class="home-contact__title">Ponte en contacto hoy</p>
-      <form class="home-contact__form" method="post">
-        <input type="text" class="home-contact__form__input" placeholder="E-mail">
-        <input type="text" class="home-contact__form__input" placeholder="Nombre">
-        <textarea placeholder="Mensaje" rows="3" class="home-contact__form__input"></textarea>
+      <form  method="post">
+        <div class="home-contact__form">
+          <input type="text" class="home-contact__form__input" placeholder="E-mail">
+          <input type="text" class="home-contact__form__input" placeholder="Nombre">
+          <textarea placeholder="Mensaje" rows="3" class="home-contact__form__input"></textarea>
+        </div>
         <input type="submit" class="home-contact__form__btn" placeholder="Enviar">
       </form>
     </div>
