@@ -8,10 +8,6 @@ from django.template.defaultfilters import slugify
 from datetime import datetime, timedelta
 from model_utils.models import TimeStampedModel
 #import models
-from applications.miscelanea.models import Tag
-from applications.destinos.models import Destination
-
-# Create your models here.
 
 
 
@@ -24,7 +20,7 @@ class Package(TimeStampedModel):
     days = models.IntegerField('dias')
     short_description = models.TextField('descripcion corta')
     price = models.IntegerField('precio')
-    tags = models.ManyToManyField(Tag, through=Tag)
+    tags = models.ManyToManyField('miscelanea.Tag', blank=True)
 
     class Meta:
         verbose_name = 'paquete'
@@ -59,7 +55,7 @@ class Route(TimeStampedModel):
 
     order = models.CharField('orden', max_length=200)
     package = models.ForeignKey(Package, verbose_name='paquete')
-    destination = models.ForeignKey(Destination, verbose_name='destino')
+    destination = models.ForeignKey('destinos.Destination', verbose_name='destino')
 
     class Meta:
         verbose_name = 'ruta'

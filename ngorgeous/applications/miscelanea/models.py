@@ -9,8 +9,6 @@ from model_utils.models import TimeStampedModel
 from datetime import datetime, timedelta
 from ckeditor_uploader.fields import RichTextUploadingField
 # import models
-from applications.paquetes.models import Package
-
 
 # Create your models here.
 @python_2_unicode_compatible
@@ -35,7 +33,7 @@ class TestimonialsPackage(TimeStampedModel):
     image = models.URLField('imagen')
     commentary = models.TextField('comentario')
     email = models.EmailField('correo')
-    package = models.ForeignKey(Package, verbose_name='paquete')
+    packages = models.ForeignKey('paquetes.Package')
 
     class Meta:
         verbose_name = 'testimonio de paquetes'

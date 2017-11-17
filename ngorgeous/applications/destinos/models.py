@@ -11,18 +11,16 @@ from model_utils.models import TimeStampedModel
 from ckeditor_uploader.fields import RichTextUploadingField
 
 #import model
-from applications.miscelanea.models import Tag
-
 
 @python_2_unicode_compatible
 class Destination(TimeStampedModel):
 
     name = models.CharField('nombre', max_length=100)
     image = models.URLField('imagen')
-    title = models.CharField('titulo')
+    title = models.CharField('titulo', max_length=200)
     content = RichTextUploadingField('contenido')
     slug = models.SlugField(editable=False, max_length=200)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField('miscelanea.Tag')
 
     class Meta:
         verbose_name = 'destino'
