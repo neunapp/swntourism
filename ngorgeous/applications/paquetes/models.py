@@ -18,6 +18,7 @@ class Package(TimeStampedModel):
     image = models.URLField('imagen')
     resume = models.TextField('resumen')
     days = models.IntegerField('dias')
+    visit = models.IntegerField('visita')
     short_description = models.TextField('descripcion corta')
     price = models.IntegerField('precio')
     tags = models.ManyToManyField('miscelanea.Tag', blank=True)

@@ -51,7 +51,7 @@ class TestimonialsDestination(TimeStampedModel):
     image = models.URLField('imagen')
     commentary = models.TextField('comentario')
     email = models.EmailField('correo')
-    #destination = models.ForeignKey('destinos.Destination', verbose_name='destino')
+    destination = models.ForeignKey('destinos.Destination', verbose_name='destino', null=True, blank=True)
 
     class Meta:
         verbose_name = 'testimonio de destinos'
