@@ -7,7 +7,8 @@ from django.template.defaultfilters import slugify
 #third import
 from datetime import datetime, timedelta
 from model_utils.models import TimeStampedModel
-#import models
+#import manager
+from .managers import PackageManager
 
 
 
@@ -22,6 +23,7 @@ class Package(TimeStampedModel):
     short_description = models.TextField('descripcion corta')
     price = models.IntegerField('precio')
     tags = models.ManyToManyField('miscelanea.Tag', blank=True)
+    objects = PackageManager()
 
     class Meta:
         verbose_name = 'paquete'
