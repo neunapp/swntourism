@@ -33,7 +33,7 @@ class TestimonialsPackage(TimeStampedModel):
     image = models.URLField('imagen')
     commentary = models.TextField('comentario')
     email = models.EmailField('correo')
-    packages = models.ForeignKey('paquetes.Package')
+    packages = models.ForeignKey('paquetes.Package', blank=True, null=True)
 
     class Meta:
         verbose_name = 'testimonio de paquetes'
@@ -44,44 +44,6 @@ class TestimonialsPackage(TimeStampedModel):
         return self.name
 
 
-
-@python_2_unicode_compatible
-class Destination(TimeStampedModel):
-
-    name = models.CharField('nombre', max_length=100)
-    image = models.URLField('imagen')
-    title = models.CharField('titulo', max_length=200)
-    content = RichTextUploadingField('contenido')
-    tags = models.ManyToManyField(Tag, related_name='tag')
-
-    class Meta:
-        verbose_name = 'destino'
-        verbose_name_plural = 'destinos'
-        ordering = ['-created']
-
-    def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        if not self.id:
-            # calculamos el total de segundos de la hora actual
-            now = datetime.now()
-            total_time = timedelta(
-                hours=now.hour,
-                minutes=now.minute,
-                seconds=now.second
-            )
-            seconds = int(total_time.total_seconds())
-            slug_unique = '%s %s' % (self.title, str(seconds))
-        else:
-            seconds = self.slug.split('-')[-1]  # recuperamos los segundos
-            slug_unique = '%s %s' % (self.title, str(seconds))
-
-        self.slug = slugify(slug_unique)
-        super(Destination, self).save(*args, **kwargs)
-
-
-
 @python_2_unicode_compatible
 class TestimonialsDestination(TimeStampedModel):
 
@@ -89,7 +51,7 @@ class TestimonialsDestination(TimeStampedModel):
     image = models.URLField('imagen')
     commentary = models.TextField('comentario')
     email = models.EmailField('correo')
-    destination = models.ForeignKey(Destination, verbose_name='destino')
+    #destination = models.ForeignKey('destinos.Destination', verbose_name='destino')
 
     class Meta:
         verbose_name = 'testimonio de destinos'

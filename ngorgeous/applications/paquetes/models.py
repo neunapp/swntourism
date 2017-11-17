@@ -55,7 +55,7 @@ class Route(TimeStampedModel):
 
     order = models.CharField('orden', max_length=200)
     package = models.ForeignKey(Package, verbose_name='paquete')
-    destination = models.ForeignKey('destinos.Destination', verbose_name='destino')
+    destination = models.ForeignKey('destinos.Destination', verbose_name='destino', blank=True, null=True)
 
     class Meta:
         verbose_name = 'ruta'

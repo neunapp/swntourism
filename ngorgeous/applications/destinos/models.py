@@ -55,7 +55,7 @@ class Gallery(TimeStampedModel):
 
     name = models.CharField('nombre', max_length=200)
     image = models.URLField('imagen')
-    destination = models.ForeignKey(Destination, verbose_name='destino')
+    destination = models.ForeignKey(Destination, verbose_name='destino', null=True, blank=True)
 
     class Meta:
         verbose_name = 'galeria'

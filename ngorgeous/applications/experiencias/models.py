@@ -9,7 +9,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from model_utils.models import TimeStampedModel
 from datetime import datetime, timedelta
 #import modelsf
-from applications.miscelanea.models import Tag, Guide, Client
+
 # Create your models here.
 
 
@@ -23,12 +23,12 @@ class Experience(TimeStampedModel):
     first_image = models.URLField('primer imagen')
     second_image = models.URLField('segunda imagen')
     third_image = models.URLField('tecer imagen')
-    guide = models.ForeignKey(Guide, verbose_name='guia')
+    guide = models.ForeignKey('miscelanea.Guide', verbose_name='guia' , null=True, blank=True)
     guide_experience = RichTextUploadingField('experiencia del guia')
-    client = models.ForeignKey(Client, verbose_name='cliente')
+    client = models.ForeignKey('miscelanea.Client', verbose_name='cliente', null=True, blank=True)
     client_experience = RichTextUploadingField('experiencia del cliente')
     slug = models.SlugField(editable=False, max_length=200)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField('miscelanea.Tag')
 
     class Meta:
 

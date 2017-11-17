@@ -9,7 +9,7 @@ from model_utils.models import TimeStampedModel
 from datetime import datetime, timedelta
 
 #miscelanea
-from applications.miscelanea.models import Tag
+
 # Create your models here.
 
 @python_2_unicode_compatible
@@ -34,7 +34,7 @@ class Home(TimeStampedModel):
     slug = models.SlugField(editable=False, max_length=200)
     third_subtitle_description = models.CharField('descripcion tercer subtitulo', max_length=300)
     phone = models.CharField('telefono', max_length=12)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField('miscelanea.Tag')
 
     class Meta:
         verbose_name = 'Home'
