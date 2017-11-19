@@ -23,7 +23,7 @@
     &__link {
       color: color(blanco);
       &:hover {
-        color: color(primero);
+        color: color(sexto);
       }
     }
   }
@@ -49,8 +49,8 @@
     &__li {
       padding: 1em;
       &:hover{
-        background: #FFAB40;
-        color: color(blanco);
+        background: color(blanco);
+        color: color(segundo);
       }
       &__a {
         padding:{
@@ -59,14 +59,11 @@
             right: 1.5em;
             left: 1.5em;
         }
-        color: #eeeeee;
+        color: color(blanco);
         font-size: $font-siz-items;
         font-family: $font-subtitle;
         &:hover{
-          color: color(blanco);
-        }
-        &:visited {
-          color: #e0e0e0;
+          color: color(segundo);
         }
       }
     }
@@ -83,7 +80,7 @@
   border-bottom: 2px solid;
   padding: 1em;
   &__a {
-    color: color(negro);
+    color: color(blanco);
     font-weight: bold;
     font-size: 1.2em;
     font-family: $font-title;
@@ -132,6 +129,7 @@
       };
       color: color(blanco);
       &:hover{
+        color: color(blanco);
         background: color(segundo);
       }
       &__a {

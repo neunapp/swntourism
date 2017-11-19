@@ -1,0 +1,39 @@
+.tour-detail {
+  font-family: $font-text;
+  &__title {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: $font-siz-title-mov;
+    font-family: $font-title-secundario;
+    text-align: center;
+    color: color(negro-suave);
+    //for tablet
+    @include desde_hasta(600px, 1024px){
+      font-size: $font-siz-title;
+      font-weight: lighter;
+    };
+    //for pc
+    @include desde(1024px){
+      font-size: $font-siz-title;
+      font-weight: lighter;
+    };
+  }
+  &__leyend {
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-size: $font-siz-text-mov;
+    color: color(negro-suave);
+    //for pc
+    @include desde(1024px){
+      font-size: $font-siz-text;
+      font-weight: lighter;
+    };
+  }
+  &__relacionados__title {
+    color: color(negro-suave);
+    font-size: $font-siz-title-mov;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+  }
+}

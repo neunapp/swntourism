@@ -1,0 +1,80 @@
+.experiencie__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
+  border-color: color(fondo1);
+  margin-bottom: 1em;
+  //for tablet
+  @include desde_hasta(600px, 1024px){
+    padding: 0.5em;
+  };
+  //for pc
+  @include desde(1024px){
+    padding: 1em;
+  };
+  &__img {
+    padding: 0.5em;
+    &__imagen {
+      width: 180px;
+      height: 140px;
+      border-radius: 50%;
+      //for tablet
+      @include desde_hasta(600px, 1024px){
+        width: 200px;
+        height: 140px;
+      };
+      //for pc
+      @include desde(1024px){
+        width: 600px;
+        height: 200px;
+      };
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 0.5em;
+    &__title {
+      color: color(negro-suave);
+      font-family: $font-subtitle;
+      font-size: $font-siz-title-mov;
+    }
+    &__date {
+      font-family: $font-text;
+      font-size: $font-siz-text-mov;
+      text-align: left;
+      color: color(primero);
+    }
+    &__text {
+      font-size: $font-siz-text;
+      //for pc
+      @include hasta(1024px){
+        display: none;
+      };
+    }
+    &__a {
+      width: 100%;
+      font-family: $font-subtitle;
+      font-size: $font-siz-text-mov;
+      padding: 0.5em;
+      color: color(negro-suave);
+      text-decoration: underline;
+      text-align: right;
+      //for tablet
+      @include desde_hasta(600px, 1024px){
+        font-size: $font-siz-text;
+      };
+      //for pc
+      @include desde(1024px){
+        font-size: $font-siz-text;
+      };
+      &:hover {
+        color: color(segundo);
+      }
+    }
+
+  }
+}

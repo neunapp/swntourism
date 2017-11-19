@@ -1,0 +1,40 @@
+.tours__copy {
+  padding: 1em;
+  text-align: center;
+  font-family: $font-text;
+  color: color(negro-suave);
+  &__title {
+    font-family: $font-subtitule-secundario;;
+    color: color(negro-suave);
+  }
+  &__description {
+    font-size: $font-siz-text-mov;
+    margin: 0px;
+    @include desde(1024px){
+      font-size: $font-siz-text;
+    };
+  }
+}
+
+.tours__filter {
+  text-align: center;
+  margin-bottom: $gutter;
+  &__item {
+    font-family: $font-text;
+    color: color(primero);
+    text-transform: uppercase;
+    font-size: $font-siz-text-mov;
+    padding: {
+      top: 0.3em;
+      bottom: 0.3em;
+      left: $gutter;
+      right: $gutter;
+    };
+    @include desde(1024px){
+      font-size: $font-siz-text;
+    };
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

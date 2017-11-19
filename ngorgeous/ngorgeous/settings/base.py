@@ -17,6 +17,7 @@ def get_secret(secret_name, secrets=secrets):
 SECRET_KEY = get_secret('SECRET_KEY')
 
 DJANGO_APPS = (
+    'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -36,8 +37,6 @@ THIRD_PARTY_APPS = (
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

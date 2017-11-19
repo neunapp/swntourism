@@ -1,0 +1,16 @@
+.btn_search {
+  background: color(primero);
+  border: none;
+  color: color(blanco);
+  padding: {
+    bottom: 0.35em;
+    top: 0.35em;
+    left: 1em;
+    right: 1em;
+  };
+  border-radius: 5px;
+  &:hover{
+    background: color(segundo);
+    cursor: pointer;
+  }
+}

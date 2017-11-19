@@ -1,0 +1,28 @@
+.experiencies {
+  padding: 1em;
+  @include desde(600px){
+    padding-top: 2em;
+  };
+  &__title {
+    color: color(negro-suave);
+    font-size: $font-siz-title-mov;
+    font-family: $font-subtitle;
+    border-bottom: solid 1px;
+    border-color: color(fondo1);
+    @include desde(600px){
+      font-size: $font-siz-title;
+      border-color: color(negro-suave);
+      margin-bottom: 0.5em;
+    };
+  }
+  &__description {
+    font-family: $font-text;
+    font-size: $font-siz-text-mov;
+    color: color(negro);
+    @include desde(600px){
+      font-size: $font-siz-text;
+      border-color: color(negro-suave);
+      margin-bottom: 2em;
+    };
+  }
+}

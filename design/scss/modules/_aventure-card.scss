@@ -1,0 +1,71 @@
+.aventure__card {
+  background: color(blanco);
+  margin-bottom: 1em;
+  &__img {
+    width: 100%;
+    height: 180px;
+    margin: 0px;
+    margin-bottom: 1em;
+    @include desde(1024px){
+      height: 220px;
+    };
+  }
+  &__info {
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    &__main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-family: $font-title;
+      font-weight: bold;
+      font-size: 0.9em;
+      &__title {
+        color: color(negro);
+        font-weight: bold;
+        &:hover {
+          color: color(segundo);
+        }
+      }
+      &__price {
+        color: color(quinto);
+        font-weight: bold;
+        font-family: $font-siz-title-mov;
+        margin-top: 5px;
+      }
+    }
+    &__content {
+      text-align: left;
+      font-family: $font-text;
+      font-size: $font-siz-text-mov;
+      &__tag {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: color(sexto);
+        margin: 0px;
+        &__icon {
+          margin-right: 10px;
+        }
+        &__text {
+          margin: 0px;
+        }
+      }
+      &__text {
+        border-bottom: solid;
+        border-color: color(fondo1);
+        height: 60px;
+        margin-top: 10px;
+        font-family: $font-title;
+      }
+    }
+    &__footer {
+      display: flex;
+      font-family: $font-text;
+      font-size: $font-siz-text-mov;
+      color: color(sexto);
+      justify-content: space-around;
+      padding-bottom: 1em;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.tours__banner {
+  position: relative;
+  text-align: center;
+  font-family: $font-title;
+  height: 160px;
+  @include desde_hasta(600px,1024px){
+    height: 280px;
+  };
+  @include desde(1024px){
+    height: 320px;
+  };
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.tours__banner__copy {
+  background-color:rgba(0,0,0,0.5);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__content {
+    text-align: center;
+    padding: 1em;
+    color: color(blanco);
+    &__text {
+      font-family: $font-text;
+      margin: 0px;
+      @include desde(1024px){
+        font-size: $font-siz-text;
+      };
+    }
+    &__h1 {
+      font-family: $font-text;
+      font-size: $font-siz-title-mov;
+      font-weight: bold;
+      @include desde(1024px){
+        font-size: $font-siz-title-mov;
+      };
+    }
+  }
+  &__ctrls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include hasta(640px){
+      display: none;
+    };
+    &__description {
+      color: color(fondo1);
+      font-family: $font-text;
+    }
+    &__form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__input {
+        width: 200px;
+        height: 30px;
+        margin: {
+          top: 0px;
+          bottom: 0px;
+          left: 0.5em;
+          right: 0.5em;
+        };
+      }
+    }
+  }
+}
