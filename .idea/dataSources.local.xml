@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="gorgeousdb@localhost" uuid="2bcdbbc0-e513-46eb-b033-97bc1af74c3a">
+      <database-info product="PostgreSQL" version="9.4.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>neunapp</user-name>
+      <introspection-schemas>gorgeousdb:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>
