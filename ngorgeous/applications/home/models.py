@@ -7,7 +7,9 @@ from django.template.defaultfilters import slugify
 # third-party
 from model_utils.models import TimeStampedModel
 from datetime import datetime, timedelta
-
+from colorfield.fields import ColorField
+#django-cms models
+from .cms_models import HomePluginModel, ValuePluginModel
 #miscelanea
 
 # Create your models here.
@@ -15,30 +17,20 @@ from datetime import datetime, timedelta
 @python_2_unicode_compatible
 class Home(TimeStampedModel):
 
-    title = models.CharField('titulo', max_length=200)
-    subtitle = models.CharField('subtitulo', max_length=200)
-    coverpage = models.ImageField('portada')
-    button_primary = models.CharField('boton primario', max_length=200)
-    button_secundary = models.CharField('boton secundario', max_length=200)
-    first_value = models.CharField('primer valor', max_length=200)
-    first_value_content = models.TextField('contenido primer valor')
-    second_value = models.CharField('segundo valor', max_length=200)
-    second_value_content = models.TextField('contenido segundo valor')
-    third_value = models.CharField('tercer valor', max_length=200)
-    third_value_content = models.TextField('contenido tercer valor')
-    first_subtitle = models.CharField('primer subtitulo', max_length=200)
-    first_subtitle_description = models.CharField('descripcion primer subtitulo', max_length=300)
-    second_subtitle = models.CharField('segundo subtitulo', max_length=200)
-    second_subtitle_description = models.CharField('descripcion segundo subtitulo', max_length=300)
-    third_subtitle = models.CharField('tercer subtitulo', max_length=200)
+    title = models.CharField('titulo', max_length=200, blank=True)
+    subtitle = models.CharField('subtitulo', max_length=200, blank=True)
+    coverpage = models.ImageField('portada', upload_to='home', blank=True, null=True)
+    button_primary = models.CharField('boton primario', max_length=200, blank=True)
+    button_secundary = models.CharField('boton secundario', max_length=200, blank=True)
     slug = models.SlugField(editable=False, max_length=200)
-    third_subtitle_description = models.CharField('descripcion tercer subtitulo', max_length=300)
-    phone = models.CharField('telefono', max_length=12)
-    tags = models.ManyToManyField('miscelanea.Tag')
-
+    #
+    plugin = models.ForeignKey(
+        HomePluginModel,
+        related_name="home_item"
+    )
     class Meta:
-        verbose_name = 'Home'
-        verbose_name_plural = 'Homes'
+        verbose_name = 'Pagina Principal'
+        verbose_name_plural = 'Pagina Principal'
         ordering = ['-created']
 
     def __str__(self):
@@ -62,3 +54,27 @@ class Home(TimeStampedModel):
 
         self.slug = slugify(slug_unique)
         super(Home, self).save(*args, **kwargs)
+
+
+
+@python_2_unicode_compatible
+class Values(TimeStampedModel):
+    """django data model valores en el home"""
+
+    value = models.CharField('Valor', max_length=30)
+    icon = models.CharField('icono', max_length=30)
+    color = ColorField(default='#1976D2')
+    description = models.CharField('Descripcion', max_length=100)
+    #
+    plugin = models.ForeignKey(
+        ValuePluginModel,
+        related_name="values_item"
+    )
+
+    class Meta:
+        verbose_name = 'Valores'
+        verbose_name_plural = 'Valores pagina principal'
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.value

@@ -1,0 +1,19 @@
+{% extends "cms_templates/base.html" %}
+
+{% load cms_tags %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+  {% placeholder "potada" %}
+  {% placeholder "valores" %}
+  {% placeholder "tours" %}
+  {% placeholder "experiencias" %}
+  {% placeholder "contacto" %}
+{% endblock content %}

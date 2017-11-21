@@ -1,0 +1,9 @@
+<div class="values grid-x grid-margin-x">
+  {% for v in values  %}
+    <div class="cell medium-4 value">
+      <i class="{{v.icon}} fa-3x value__icon" style="color:{{v.color}}" aria-hidden="true"></i>
+      <p class="value__title">{{v.value}}</p>
+      <p class="value__text">{{v.description}}</p>
+    </div>
+  {% endfor %}
+</div>

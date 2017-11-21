@@ -1,0 +1,40 @@
+{% load static cms_tags menu_tags sekizai_tags %}
+
+{% load  staticfiles %}
+
+<!doctype html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>{% block title %}{% endblock title %}</title>
+      {% block css %}
+        <!-- blog csss -->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+      {% endblock %}
+
+      {% block js %}
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/foundation.min.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+        <script src="{% static 'js/scrips.js' %}"></script>
+      {% endblock js %}
+      
+      {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+
+        <!-- seccion para el header de todas las paginas -->
+        {% show_menu 0 100 100 100 "cms_templates/include/header.html" %}
+
+        {% block content %}{% endblock content %}
+
+        <!-- seccion para el footer de todas las paginas -->
+        {% include "cms_templates/include/footer.html" %}
+        {% render_block "js" %}
+    </body>
+</html>

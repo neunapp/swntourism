@@ -96,6 +96,7 @@ design/scss/_app.scss
 design/scss/_config.scss
 design/scss/_settings.scss
 design/scss/styles.scss
+design/img/*
 #
 
 # Secrect json
