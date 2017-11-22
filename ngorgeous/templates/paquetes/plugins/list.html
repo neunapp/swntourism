@@ -1,0 +1,18 @@
+<div class="paquetes">
+  <div class="paquetes__copy">
+    <h2 class="paquetes__copy__title">Nuestros Tours Más Destacados</h2>
+    <p class="paquetes__copy__text">Encuentra Tours Tradicionales, Caminatas, Turismo Aventura en Cusco, Arequipa, Puno, y todo el Perú.</p>
+  </div>
+  <div class="paquetes__items grid-x grid-margin-x">
+    {% for p in paquetes  %}
+      <div class="cell small-6 medium-4 large-3 paquetes__item">
+        <img src="{{p.image.url}}" alt="{{p.name}}" class="paquetes__item__img">
+        <div class="paquetes__item__content">
+          <h3 class="paquetes__item__content__title">{{p.name}}</h3>
+          <p class="paquetes__item__content__text" title="{{ p.short_description }}">{{p.short_description|safe|truncatechars_html:80 }}</p>
+          <a href="#" class="paquetes__item__content__btn">Ver más</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

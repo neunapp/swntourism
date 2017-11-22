@@ -12,6 +12,7 @@ from .models import Home, Values
 
 class HomeInlineAdmin(admin.StackedInline):
     model = Home
+    extra = 1
 
 
 class ValuesInlineAdmin(admin.StackedInline):

@@ -8,6 +8,8 @@ from django.contrib.sitemaps.views import sitemap
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
+    #url for ckeditor
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     #url for django csm
     url(r'^', include('cms.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

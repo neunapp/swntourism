@@ -10,9 +10,6 @@ from model_utils.models import TimeStampedModel
 from datetime import datetime, timedelta
 #import modelsf
 
-# Create your models here.
-
-
 
 @python_2_unicode_compatible
 class Experience(TimeStampedModel):

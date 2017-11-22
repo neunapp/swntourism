@@ -9,25 +9,32 @@ from datetime import datetime, timedelta
 from model_utils.models import TimeStampedModel
 #import manager
 from .managers import PackageManager
-
+#import cms_models
+from .cms_models import PackagePluginModel
 
 
 @python_2_unicode_compatible
 class Package(TimeStampedModel):
 
     name = models.CharField('nombre', max_length=100)
-    image = models.URLField('imagen')
+    image = models.ImageField('imagen', upload_to="paquetes")
     resume = models.TextField('resumen')
     days = models.IntegerField('dias')
-    visit = models.IntegerField('visita')
+    visit = models.IntegerField('visita', default=0, editable=False)
     short_description = models.TextField('descripcion corta')
     price = models.IntegerField('precio')
     tags = models.ManyToManyField('miscelanea.Tag', blank=True)
+    #
+    plugin = models.ForeignKey(
+        PackagePluginModel,
+        related_name="package_item"
+    )
+    #
     objects = PackageManager()
 
     class Meta:
-        verbose_name = 'paquete'
-        verbose_name_plural = 'paquetes'
+        verbose_name = 'paquete turistico'
+        verbose_name_plural = 'paquetes turisticos'
         ordering = ['-created']
 
     def __str__(self):
@@ -57,7 +64,7 @@ class Package(TimeStampedModel):
 class Route(TimeStampedModel):
 
     order = models.CharField('orden', max_length=200)
-    package = models.ForeignKey(Package, verbose_name='paquete')
+    package = models.ForeignKey(Package, verbose_name='paquete_turistico')
     destination = models.ForeignKey('destinos.Destination', verbose_name='destino', blank=True, null=True)
 
     class Meta:
@@ -84,9 +91,3 @@ class Property(TimeStampedModel):
 
     def __str__(self):
         return self.order
-
-
-
-
-
-
